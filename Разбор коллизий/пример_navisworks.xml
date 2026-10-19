@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exchange>
+ <batchtest name="Проверка ОВ">
+  <clashtests>
+   <clashtest name="ОВ vs КР" test_type="hard" tolerance="0.000">
+    <clashresults>
+     <clashresult name="Конфликт1" distance="-0.1200"><resultstatus>Новый</resultstatus>
+      <clashpoint><pos3f x="12.40" y="5.10" z="3.20"/></clashpoint>
+      <clashobjects>
+       <clashobject><objectattribute><name>Element ID</name><value>401211</value></objectattribute><pathlink><node>ОВ.nwc</node><node>Воздуховоды</node><node>Воздуховод прямоугольный 500x300</node></pathlink></clashobject>
+       <clashobject><objectattribute><name>Element ID</name><value>200310</value></objectattribute><pathlink><node>КР.nwc</node><node>Каркас несущий</node><node>Балка Б-1 400x600</node></pathlink></clashobject>
+      </clashobjects></clashresult>
+     <clashresult name="Конфликт2" distance="-0.0030"><resultstatus>Новый</resultstatus>
+      <clashpoint><pos3f x="8.00" y="2.00" z="3.00"/></clashpoint>
+      <clashobjects>
+       <clashobject><objectattribute><name>Element ID</name><value>401300</value></objectattribute><pathlink><node>ОВ.nwc</node><node>Трубы</node><node>Труба стальная Ду20</node></pathlink></clashobject>
+       <clashobject><objectattribute><name>Element ID</name><value>200500</value></objectattribute><pathlink><node>КР.nwc</node><node>Колонны</node><node>Колонна К-2 400x400</node></pathlink></clashobject>
+      </clashobjects></clashresult>
+     <clashresult name="Конфликт3" distance="-0.0800"><resultstatus>Новый</resultstatus>
+      <clashpoint><pos3f x="15.00" y="7.00" z="3.40"/></clashpoint>
+      <clashobjects>
+       <clashobject><objectattribute><name>Element ID</name><value>401500</value></objectattribute><pathlink><node>ОВ.nwc</node><node>Подвесы</node><node>Подвес для воздуховода М8</node></pathlink></clashobject>
+       <clashobject><objectattribute><name>Element ID</name><value>200700</value></objectattribute><pathlink><node>КР.nwc</node><node>Перекрытия</node><node>Плита перекрытия 220 мм</node></pathlink></clashobject>
+      </clashobjects></clashresult>
+    </clashresults>
+   </clashtest>
+   <clashtest name="ОВ vs АР" test_type="hard" tolerance="0.000">
+    <clashresults>
+     <clashresult name="Конфликт1" distance="-0.2500"><resultstatus>Новый</resultstatus>
+      <clashpoint><pos3f x="3.00" y="9.00" z="2.80"/></clashpoint>
+      <clashobjects>
+       <clashobject><objectattribute><name>Element ID</name><value>401211</value></objectattribute><pathlink><node>ОВ.nwc</node><node>Воздуховоды</node><node>Воздуховод прямоугольный 500x300</node></pathlink></clashobject>
+       <clashobject><objectattribute><name>Element ID</name><value>300100</value></objectattribute><pathlink><node>АР.nwc</node><node>Стены</node><node>Стена кирпичная 250 мм</node></pathlink></clashobject>
+      </clashobjects></clashresult>
+     <clashresult name="Конфликт2" distance="-0.0200"><resultstatus>Новый</resultstatus>
+      <clashpoint><pos3f x="6.00" y="4.00" z="2.90"/></clashpoint>
+      <clashobjects>
+       <clashobject><objectattribute><name>Element ID</name><value>401800</value></objectattribute><pathlink><node>ОВ.nwc</node><node>Изоляция воздуховодов</node><node>Изоляция K-Flex 19 мм</node></pathlink></clashobject>
+       <clashobject><objectattribute><name>Element ID</name><value>300200</value></objectattribute><pathlink><node>АР.nwc</node><node>Потолки</node><node>Подвесной потолок Armstrong</node></pathlink></clashobject>
+      </clashobjects></clashresult>
+    </clashresults>
+   </clashtest>
+   <clashtest name="ОВ vs КР повтор" test_type="hard" tolerance="0.000">
+    <clashresults>
+     <clashresult name="Конфликт1" distance="-0.1150"><resultstatus>Новый</resultstatus>
+      <clashpoint><pos3f x="12.41" y="5.10" z="3.20"/></clashpoint>
+      <clashobjects>
+       <clashobject><objectattribute><name>Element ID</name><value>200310</value></objectattribute><pathlink><node>КР.nwc</node><node>Каркас несущий</node><node>Балка Б-1 400x600</node></pathlink></clashobject>
+       <clashobject><objectattribute><name>Element ID</name><value>401211</value></objectattribute><pathlink><node>ОВ.nwc</node><node>Воздуховоды</node><node>Воздуховод прямоугольный 500x300</node></pathlink></clashobject>
+      </clashobjects></clashresult>
+    </clashresults>
+   </clashtest>
+  </clashtests>
+ </batchtest>
+</exchange>
