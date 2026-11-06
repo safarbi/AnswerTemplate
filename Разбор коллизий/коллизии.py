@@ -85,10 +85,16 @@ def load_rules(path):
 
 
 def matches(pattern, text):
-    """Пустое поле подходит ко всему. «Труб|Воздуховод» означает «или»."""
-    if not pattern.strip():
+    """Пустое поле подходит ко всему.
+    «Труб|Воздуховод» означает «или», «Стен&ЖБ» означает «и»."""
+    if not (pattern or "").strip():
         return True
-    return any(p.strip().lower() in text.lower() for p in pattern.split("|") if p.strip())
+    text = text.lower()
+    for variant in pattern.split("|"):
+        words = [w.strip().lower() for w in variant.split("&") if w.strip()]
+        if words and all(w in text for w in words):
+            return True
+    return False
 
 
 def apply_rules(clash, rules):
@@ -98,6 +104,8 @@ def apply_rules(clash, rules):
         if limit:
             if depth is None or depth > float(limit):
                 continue
+        if not matches(r.get("Тест содержит", ""), clash["Тест"]):
+            continue
         pa, pb = r["Элемент A содержит"], r["Элемент B содержит"]
         # Порядок элементов в отчёте случайный, поэтому проверяем обе стороны.
         if (matches(pa, a) and matches(pb, b)) or (matches(pa, b) and matches(pb, a)):
